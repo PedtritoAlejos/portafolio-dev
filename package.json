@@ -1,0 +1,28 @@
+{
+  "name": "portafolio-dev",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedtritoAlejos/portafolio-dev.git"
+  },
+  "keywords": [
+    "testing"
+  ],
+  "author": "jose maulen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PedtritoAlejos/portafolio-dev/issues"
+  },
+  "homepage": "https://github.com/PedtritoAlejos/portafolio-dev#readme"
+}
