@@ -253,7 +253,7 @@
                         Contáctanos</h2>
                   
                 </div>
-                <form action="/send-mail" method="POST" id="contactForm" name="sentMessage" >
+                <form  id="contactForm" name="sentMessage" >
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -278,7 +278,7 @@
                     </div>
                     <div class="text-center">
                         <div id="success"></div>
-                        <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="submit">Enviar</button>
+                        <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="button" onclick="EnviarMensaje()">Enviar</button>
                     </div>
                 </form>
             </div>

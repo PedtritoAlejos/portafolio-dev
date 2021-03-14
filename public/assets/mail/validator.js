@@ -1,6 +1,8 @@
 //delete input if not valid
+
+const { json } = require("express");
+
 //get elements from the DOM
-const nameInput=document.getElementById("name");
 const emailInput=document.getElementById("email");
 const phoneInput=document.getElementById("phone");
 const messageInput=document.getElementById("message");
@@ -53,4 +55,27 @@ function NotValid(input){
     input.classList.add("notValid");
     input.classList.remove("valid");
 }
-//submit trigger
+//enviar mensaje
+function EnviarMensaje(){ 
+    let username = document.getElementById("name").value;
+    let userphone = document.getElementById("phone").value;
+    let usermail = document.getElementById("email").value;
+    let usermessage = document.getElementById("message").value;
+
+    let data={
+        username:username,
+        userphone: userphone,
+        usermail: usermail,
+        usermessage: usermessage
+    }
+
+    $.ajax({
+        type: "POST",
+        url: '/send-mail',
+        data: data,
+        success: function(response){
+            alert(response.message);
+        },
+        dataType: 'json'
+      });
+}
