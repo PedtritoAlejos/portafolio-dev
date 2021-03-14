@@ -253,25 +253,25 @@
                         Contáctanos</h2>
                   
                 </div>
-                <form id="contactForm" name="sentMessage" novalidate="novalidate" autocomplete="off">
+                <form action="/send-mail" method="POST" id="contactForm" name="sentMessage" >
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input class="form-control" id="name" type="text" placeholder="NOMBRE *" required="required" data-validation-required-message="Ingrese nombre." autocomplete="off"/>
+                                <input class="form-control" name="name" id="name" type="text" placeholder="NOMBRE *" required="required" data-validation-required-message="Ingrese nombre." autocomplete="off"/>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="email" type="email" placeholder="E-MAIL *" required="required" data-validation-required-message="Favor ingrese E-mail." />
+                                <input class="form-control" name="email" id="email" type="email" placeholder="E-MAIL *" required="required" data-validation-required-message="Favor ingrese E-mail." />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group mb-md-0">
-                                <input class="form-control" id="phone" type="tel"   placeholder="TELEFONO *" required="required" data-validation-required-message="Favor ingrese telefono." />
+                                <input class="form-control" name="phone" id="phone" type="tel"   placeholder="TELEFONO *" required="required" data-validation-required-message="Favor ingrese telefono." />
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
-                                <textarea class="form-control" id="message" placeholder="MENSAJE *" required="required" data-validation-required-message="Favor ingrese un mensaje."></textarea>
+                                <textarea class="form-control" name="message" id="message" placeholder="MENSAJE *" required="required" data-validation-required-message="Favor ingrese un mensaje."></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -484,8 +484,7 @@
         <!-- Third party plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Contact form JS-->
-        <script src="assets/mail/jqBootstrapValidation.js"></script>
-        <script src="assets/mail/contact_me.js"></script>
+        <script src="./assets/mail/validator.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
