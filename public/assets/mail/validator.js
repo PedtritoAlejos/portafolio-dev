@@ -7,6 +7,10 @@ const emailInput=document.getElementById("email");
 const phoneInput=document.getElementById("phone");
 const messageInput=document.getElementById("message");
 const form =document.getElementById("contactForm");
+const nombre=document.getElementById("nombre");
+const correo=document.getElementById("correo");
+const fono=document.getElementById("fono");
+const texto=document.getElementById("texto");
 //add event listeners
 nameInput.addEventListener('blur',NameValidate);
 emailInput.addEventListener('blur',EmailValidate);
@@ -14,43 +18,58 @@ phoneInput.addEventListener('blur',PhoneValidate);
 messageInput.addEventListener('blur',MessageValidate);
 //add validation functions
 function NameValidate(){
-    const nameRegex=/^[A-Za-z]{2,20}( )?[A-Za-z]{2,20}$/
+    const nameRegex=/^[A-Za-z]{2,20}( )?([A-Za-z]{2,20})?$/
     if(!nameRegex.test(nameInput.value)){
         isInputValid[0]=false;
-        console.log(isInputValid);
+        nombre.classList.add("alert-danger","alert");
+        nombre.innerHTML="<strong>El nombre ingresado no es valido.</strong>";
+
     }else{
         isInputValid[0]=true;
-        console.log(isInputValid);
+        nombre.classList.remove("alert-danger","alert");
+        nombre.innerHTML="<strong></strong>";
     }
 }
 function EmailValidate(){
     const emailRegex=/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
     if(!emailRegex.test(emailInput.value)){
         isInputValid[1]=false;
-        console.log(isInputValid);
+        correo.classList.add("alert-danger","alert");
+        correo.innerHTML="<strong>El correo ingresado no es valido.</strong>";
+
     }else{
         isInputValid[1]=true;
-        console.log(isInputValid);
+        correo.classList.remove("alert-danger","alert");
+        correo.innerHTML="<strong></strong>";
+
     }
 }
 function PhoneValidate(){
-    const phoneRegex=/^(\+56)?(9{1})(\d{8})$/;
+    const phoneRegex=/^(\+)?(56)?(9{1})(\d{8})$/;
     if(!phoneRegex.test(phoneInput.value)){
         isInputValid[2]=false;
-        console.log(isInputValid);
+        fono.classList.add("alert-danger","alert");
+        fono.innerHTML="<strong>El telefono ingresado no es valido.</strong>";
+
     }else{
         isInputValid[2]=true;
-        console.log(isInputValid);
+        fono.classList.remove("alert-danger","alert");
+        fono.innerHTML="<strong></strong>";
+
     }
 }
 function MessageValidate(){
     const messageRegex=/^[a-zA-Z0-9-_.,"'\(\)\ ]{2,150}$/;
     if(!messageRegex.test(messageInput.value)){
         isInputValid[3]=false;
-        console.log(isInputValid);
+        texto.classList.add("alert-danger","alert");
+        texto.innerHTML="<strong>El texto ingresado no es valido.</strong>";
+
     }else{
         isInputValid[3]=true;
-        console.log(isInputValid);
+        texto.classList.remove("alert-danger","alert");
+        texto.innerHTML="<strong></strong>";
+
     }
 }
 
@@ -60,15 +79,13 @@ function Valid(input){
     input.classList.add("valid");
 }
 function NotValid(input){
-    input.classList.add("notValid");
+    input.classList.add("");
     input.classList.remove("valid");
 }
 //enviar mensaje
 function IsInputValid(){
     if(isInputValid.includes(false)){
-        console.log('faltan campos por rellenar');
     }else{
-        console.log('mesaje enviado');
         function EnviarMensaje(){ 
             let username = document.getElementById("name").value;
             let userphone = document.getElementById("phone").value;

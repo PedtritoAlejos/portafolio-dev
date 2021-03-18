@@ -253,26 +253,30 @@
                         Contáctanos</h2>
                   
                 </div>
-                <form  id="contactForm" name="sentMessage" >
+                <form  id="contactForm" name="sentMessage">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <input class="form-control" name="name" id="name" type="text" placeholder="NOMBRE *" />
-                                <p class="help-block text-danger"></p>
+                            <div class="form-group" >
+                                <input class="form-control" name="name" id="name" type="text" placeholder="ingrese su nombre" required />
+                                <div id="nombre" ></div>
+
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" >
                                 <input class="form-control" name="email" id="email" type="email" placeholder="E-MAIL *" required="required" data-validation-required-message="Favor ingrese E-mail." />
-                                <p class="help-block text-danger"></p>
+                                <div id="correo" ></div>
+
                             </div>
-                            <div class="form-group mb-md-0">
+                            <div class="form-group mb-md-0" >
                                 <input class="form-control" name="phone" id="phone" type="tel"   placeholder="TELEFONO *" required="required" data-validation-required-message="Favor ingrese telefono." />
-                                <p class="help-block text-danger"></p>
+                                <div id="fono" ></div>
+
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
                                 <textarea class="form-control" name="message" id="message" placeholder="MENSAJE *" required="required" data-validation-required-message="Favor ingrese un mensaje."></textarea>
-                                <p class="help-block text-danger"></p>
+                                <div id="texto" ></div>
+
                             </div>
                         </div>
                     </div>
