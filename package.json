@@ -4,10 +4,16 @@
   "description": "test",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cor": "0.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-validator": "^6.10.0",
     "nodemailer": "^6.5.0"
   },
   "devDependencies": {
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.7"
   },
   "scripts": {
