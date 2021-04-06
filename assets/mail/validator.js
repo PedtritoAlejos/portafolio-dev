@@ -21,7 +21,7 @@ phoneInput.addEventListener('blur',PhoneValidate);
 messageInput.addEventListener('blur',MessageValidate);
 //add validation functions
 function NameValidate(){
-    const nameRegex=/^[A-Za-z]{2,20}( )?([A-Za-z]{2,20})?$/;
+    const nameRegex=/^[A-Za-z]{2,20}( )?([A-Za-z]{2,20})( )?([A-Za-z]{2,20})( )?([A-Za-z]{2,20})( )?([A-Za-z]{2,20})?$/;
     if(!nameRegex.test(nameInput.value)){
         isInputValid[0]=false;
         nombre.classList.add("alert-danger","alert");
