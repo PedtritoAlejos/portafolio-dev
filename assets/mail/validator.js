@@ -11,6 +11,9 @@ const nombre=document.getElementById("nombre");
 const correo=document.getElementById("correo");
 const fono=document.getElementById("fono");
 const texto=document.getElementById("texto");
+const captcha = document.getElementsByClassName("g-recaptcha");
+
+
 //add event listeners
 nameInput.addEventListener('blur',NameValidate);
 emailInput.addEventListener('blur',EmailValidate);
@@ -73,6 +76,23 @@ function MessageValidate(){
     }
 }
 
+const validaCaptcha = (mensaje) =>{ 
+    let responseCaptcha = grecaptcha.getResponse();
+    let captchaError = document.getElementById("captcha");
+
+
+    if(responseCaptcha.length == 0){
+        captchaError.classList.add("alert-danger","alert","text-center");
+        captchaError.innerHTML=`<strong >${mensaje}.</strong>`;
+        return "error";
+    } else {
+      
+      captchaError.classList.remove("alert-danger","alert", "text-center");
+      return "validado";
+    }
+    
+}
+
 //triggers
 function Valid(input){
     input.classList.remove("notValid");
@@ -87,6 +107,12 @@ function IsInputValid(){
     if(isInputValid.includes(false)){
     }else{
         function EnviarMensaje(){ 
+           
+         let validacion = validaCaptcha("Debes llenar la casilla del captcha para continuar");
+              
+         if (validacion === "validado") {
+             
+         
             let username = document.getElementById("name").value;
             let userphone = document.getElementById("phone").value;
             let usermail = document.getElementById("email").value;
@@ -108,6 +134,8 @@ function IsInputValid(){
                 },
                 dataType: 'json'
               });
+
+         }
         }
         EnviarMensaje();
     }

@@ -15,6 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -278,9 +279,19 @@
 
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <div class="form-group mt-4 justify-content-center" >
+                                
+                                    <center><div  class="g-recaptcha" data-sitekey="6Lf07J4aAAAAAGTR3lXWNOGclS7y7S8IEWEDnsEK"></div></center>
+                                
+                                    <div id="captcha" ></div>
+
+                            </div>
+                        </div>
                     </div>
                     <div class="text-center">
                         <div id="success"></div>
+                       
                         <button class="btn btn-primary btn-xl text-uppercase" id="sendMessageButton" type="button" onclick="IsInputValid()">Enviar</button>
                     </div>
                 </form>
